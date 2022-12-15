@@ -8,7 +8,7 @@ const LoginView = (props: Props) => {
     const [usre, setUser] = useState([])
     useEffect(() => {
         localStorage.setItem('value', JSON.stringify({}))
-        setUser(JSON.parse(localStorage.getItem('user') ? localStorage.getItem('user') : [] as any))
+        setUser(JSON.parse(localStorage.getItem('user') ? localStorage.getItem('user') : [] as any) ? JSON.parse(localStorage.getItem('user') ? localStorage.getItem('user') : [] as any) : [])
     }, [])
     const navigate = useNavigate()
     const onFinish = (values: { username: string, password: string }) => {
